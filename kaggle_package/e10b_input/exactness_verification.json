@@ -1,0 +1,10 @@
+{
+  "checks": {
+    "shape_exact": true,
+    "nnz_exact": true,
+    "edges_exact": true,
+    "nodes_exact": true,
+    "pairs_exact": true
+  },
+  "all_exact": true
+}

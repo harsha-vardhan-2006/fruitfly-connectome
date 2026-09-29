@@ -1,0 +1,58 @@
+{
+  "e11_neighborhood_nt": {
+    "top50": {
+      "GABA": 0.16676339156172015,
+      "ACH": 0.6432979320217438,
+      "GLUT": 0.11642775617588455,
+      "other": 0.008850327897394232,
+      "unknown": 0.06466059234325731,
+      "n_partners": 103386
+    },
+    "background": {
+      "GABA": 0.16858266525487822,
+      "ACH": 0.597640296475571,
+      "GLUT": 0.11488428376947511,
+      "other": 0.020949931931629102,
+      "unknown": 0.09794282256844652,
+      "n_partners": 13222
+    }
+  },
+  "e12_enrichment": {
+    "top50_super_class_counts": {
+      "visual_centrifugal": 21,
+      "optic": 19,
+      "central": 6,
+      "visual_projection": 3,
+      "descending": 1
+    },
+    "enrichment_ratio_top50_vs_all": {
+      "visual_centrifugal": 11.71,
+      "visual_projection": 1.12,
+      "optic": 1.09,
+      "central": 0.27,
+      "descending": 0.22
+    },
+    "top50_nt_counts": {
+      "GABA": 27,
+      "ACH": 15,
+      "OCT": 3,
+      "GLUT": 3,
+      "DA": 2
+    },
+    "gaba_frac_top50": 0.54,
+    "gaba_frac_all_tested": 0.5186873290793071,
+    "top50_median_degree": 1925.5,
+    "all_median_degree": 317.0
+  },
+  "e13_robustness": {
+    "spearman_screen_vs_rerank": 0.6657343874299341,
+    "pearson_k32_seed0_vs_seed1": 0.7672567730518568,
+    "top100_jaccard_3way": 0.7433628318584071,
+    "spearman_cis_vs_reachdrop": 0.39201046877570206
+  },
+  "e14_class_counts": {
+    "not_classified": 124,
+    "A_strong_chokepoint": 50,
+    "C_gaba_candidate": 26
+  }
+}

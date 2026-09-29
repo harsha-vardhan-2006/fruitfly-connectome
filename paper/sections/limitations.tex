@@ -1,0 +1,31 @@
+% 6. Limitations
+\section{Limitations}
+
+\begin{enumerate}
+\item \textbf{Structural, not functional.} All metrics derive from the
+static wiring diagram. Node removal is a computational abstraction of
+silencing; no physiological manipulation was performed, and no claim of
+functional necessity is made.
+\item \textbf{Single reconstruction.} FAFB v783 is one female brain;
+reconstruction- and specimen-dependence is unquantified here.
+\item \textbf{Metric dependence.} Global directed efficiency is one
+functional; the reachability-drop diagnostic correlates only moderately
+($\rho=0.39$) and both are reported.
+\item \textbf{Neurotransmitter annotations.} NT identities are
+model predictions \cite{schlegel2024}, not measured signs; GLUT is
+sign-ambiguous and was analyzed separately.
+\item \textbf{Degree matching.} Greedy 1:1 matching within $\pm10\%$
+cannot exclude residual within-window imbalance; the exact
+degree-preserving null ensemble addresses the dominant confound.
+\item \textbf{Connection-table sensitivity not completed.} The full
+no-threshold sensitivity analysis was RAM-infeasible in the 8-GB
+environment ($\sim$50M collapsed pairs; out-of-memory), and is deferred
+to a high-RAM notebook; the Buhmann table is methodologically
+non-comparable and was excluded. This analysis is \emph{not} claimed as
+performed.
+\item \textbf{Null-resolution and estimator matching.} With $n=100$
+nulls, empirical tail resolution is ${\sim}0.01$; the null comparison
+uses the $k{=}4$ panel for observed and nulls alike, while the primary
+matched-pair statistic reads $\delta=0.111$ from the $k{=}8$ screening
+CIS. Both pre-registered statistics agree on the verdict.
+\end{enumerate}

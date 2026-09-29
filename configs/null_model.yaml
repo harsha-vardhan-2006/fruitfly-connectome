@@ -1,0 +1,20 @@
+# Null model configuration (E10)
+model: directed_configuration_model
+degree_preservation: exact (both in- and out-degree sequences)
+construction: vectorized stub matching + swap repair (self-loops, duplicates)
+repair_rounds_max: 50
+
+pilot_run:
+  n_nulls: 5
+  panel_k: 4
+  seeds: [100, 101, 102, 103, 104]
+  statistic: [median_diff, cliffs_delta] on 848 pre-registered matched pairs
+  result: null_delta = 0.084 +/- 0.010; observed 0.098; p_delta = 0.33
+  verdict: outcome B - degree topology reproduces the matched-pair effect
+
+full_protocol:   # pre-registered, NOT yet run (publication gate)
+  n_nulls: 100
+  panel_k: 8
+  seeds: 200..299
+  also_report: [z_scores, empirical_p, top100_chokepoint_overlap_per_null]
+  fdr: benjamini_hochberg where per-neuron claims are made

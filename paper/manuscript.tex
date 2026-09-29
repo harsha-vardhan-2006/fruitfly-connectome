@@ -1,0 +1,177 @@
+% ============================================================================
+% Neuron-Level Structural Control Impact Reveals Visual-Centrifugal
+% Chokepoints in the Drosophila Connectome
+%
+% Compile: pdflatex manuscript && bibtex manuscript && pdflatex manuscript &&
+%          pdflatex manuscript
+% Requires: article class + graphicx, amsmath, booktabs, geometry, hyperref
+%           (a standard TeX Live / MiKTeX installation). Figures are vector
+%           PDFs in figures/; tables are \input from tables/.
+% The companion inspection PDF (manuscript_production.pdf) is rendered from
+% manuscript_production.html via Edge headless for environments without a
+% TeX toolchain; the .tex source above is the submission-grade source.
+% ============================================================================
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+
+\graphicspath{{figures/}}
+\title{\textbf{Neuron-Level Structural Control Impact Reveals\\
+Visual-Centrifugal Chokepoints in the \emph{Drosophila} Connectome}}
+\author{FAFB v783 Connectome Control-Impact Study\\
+\small Frozen scientific results: E06--E14 (2026-09-15), E10B 100-null
+confirmation (2026-09-17)}
+\date{September 18, 2026}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+
+\input{sections/introduction}
+\input{sections/related_work}
+\input{sections/methods}
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/limitations}
+\input{sections/conclusion}
+
+\section*{Figure captions}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{Figure1}
+\caption{\textbf{Study overview.} (A) The FAFB v783 adult female
+\emph{Drosophila} connectome (139,255 neurons) is (B) represented as a
+binary directed graph (138,584 nodes; 3,732,460 edges). (C) Each
+pre-registered target neuron is removed computationally and (D) its
+structural control impact is quantified as
+$\mathrm{CIS}(i)=1-S(G-i)/S(G)$, the fractional loss of global directed
+efficiency. (E) Workflow: 3,518 pre-registered targets screened at $k=8$
+and re-ranked at $k=32$; 848 degree-matched GABA--ACh pairs; 100
+degree-preserving null networks (exact in/out degree sequences, verified
+per null); enrichment and per-node chokepoint analyses. Outcomes: the
+GABA-excess hypothesis is not supported ($\delta=0.098$ inside the null
+ensemble, $p_\delta=0.109$, $p_{\mathrm{median}}=0.782$), while
+visual-centrifugal chokepoints are enriched (2.63$\times$ at $K=50$ after
+degree matching, $z=5.3$, $p=10^{-4}$; 13/50 beat degree-matched peers).
+All claims are structural (removal-based network sensitivity), not
+functional causality.}
+\label{fig:overview}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{Figure2}
+\caption{\textbf{Network and structural control-impact characterization.}
+(A) CIS distribution across the 3,518 pre-registered perturbation targets
+(log scale); dashed line: median $9.7\times10^{-6}$; red line: maximum
+0.024. (B) Anatomical composition of the top-50 chokepoints by
+super-class (green: visual centrifugal/optic; grey: central and other).
+(C) Median degrees: top-50 out-degree 1,050 and in-degree 566 versus
+tested-population median total degree 315 --- top chokepoints are
+output-dominated hubs. $n$: 3,518 (A); 50 (B); medians from the frozen
+E13 outputs (C).}
+\label{fig:network}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{Figure3}
+\caption{\textbf{The GABAergic hypothesis is not supported.}
+(A) Per-pair CIS differences (GABA $-$ matched ACh; 848 pairs, $k=8$
+screening CIS); red line: median difference $8.7\times10^{-7}$.
+(B) Matched CIS distributions (box plots, outliers suppressed; medians
+annotated); Wilcoxon $p=0.0011$ reflects the small raw advantage.
+(C) The decisive comparison: observed Cliff's $\delta=0.098$ ($k=4$
+panel, matched estimator) against the 100-null degree-preserving
+ensemble (mean 0.071, sd 0.022); empirical $p_\delta=0.109$,
+$p_{\mathrm{median}}=0.782$ --- the observed statistic lies inside the
+null ensemble. The visual pairing of (B) and (C) is intentional: a
+statistically detectable raw difference can still be fully compatible
+with degree-preserving structure.}
+\label{fig:gaba}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{Figure4}
+\caption{\textbf{Degree control.} (A) $\log_{10}$(CIS) versus
+$\log_{10}$(degree) for GABA neurons and their matched ACh controls
+(848 pairs); CIS rises steeply with degree. (B) Pairwise log-ratio
+$\log_{10}(\mathrm{CIS}_{\mathrm{GABA}}/\mathrm{CIS}_{\mathrm{ACh}})$
+versus degree; the degree-controlled OLS coefficient for GABA identity is
+$\beta_1=-0.025$ (permutation $p=0.95$) --- no residual GABA association
+after degree adjustment.}
+\label{fig:degctrl}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{Figure5}
+\caption{\textbf{Degree-preserving null-network framework.} (A) Procedure:
+the observed graph is rewired by vectorized stub matching with defect
+repair (partner sets distinct from and disjoint to defects) and rejection
+redraw; every accepted null preserves both degree sequences exactly and
+carries no self-loops or duplicate directed edges; the matched-pair
+statistic is recomputed on the same 848 pairs at the same panel size
+($k=4$); the ensemble comprises 100 nulls (null\_id 0--99, seeds
+$100+i$). (B) Per-null verification: 100/100 nulls show exact in- and
+out-degree sequence matches (status ok).}
+\label{fig:nullproc}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\textwidth]{Figure6}
+\caption{\textbf{E10B final null distribution (decisive result).} Grey:
+Cliff's $\delta$ for the 100 degree-preserving nulls; red line: observed
+$\delta=0.098$; dashed line: null mean $0.071$ (sd 0.022). Red ticks mark
+the 10 nulls meeting or exceeding the observation (empirical
+$p_\delta=0.109$); the median-difference statistic independently gives
+$p=0.782$. The observation lies inside the ensemble: no visual or
+statistical excess over degree-preserving structure is implied.
+$n=100$ nulls; estimator matched between observation and nulls.}
+\label{fig:nulls}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{Figure7}
+\caption{\textbf{Visual-centrifugal chokepoints.} (A) Observed
+visual-centrifugal counts in the top-$K$ sets (green points) versus
+expectations under tested-universe random draws (control A) and
+per-slot degree-matched draws (control B), $K=25/50/100$.
+(B) Degree-matched enrichment ratios with $z$ scores: 2.47$\times$
+($z=3.3$), 2.63$\times$ ($z=5.3$), 2.15$\times$ ($z=4.9$); $p=10^{-4}$
+at $K=50$ (10,000 replicates). (C) Representative top-12 chokepoints:
+CIS relative to degree-matched peer median (green: optic/visual
+centrifugal; grey: other classes); the rank-3 octopaminergic centrifugal
+neuron reaches ${\sim}156\times$ its peer median --- a low-degree
+structural chokepoint. All identifications are structural; class labels
+from Schlegel et al.\ (2024) annotations.}
+\label{fig:vc}
+\end{figure}
+
+\clearpage
+\input{tables/Table1}
+\input{tables/Table2}
+\input{tables/Table3}
+\input{tables/Table4}
+\input{tables/Table5}
+
+\section*{Data and code availability}
+Data: FlyWire FAFB v783 (Princeton exports), CC BY-NC 4.0 --- cite
+Dorkenwald et al.\ (2024), Schlegel et al.\ (2024), Matsliah et al.\
+(2024). Code: repository \texttt{src/}, \texttt{tests/}, and
+\texttt{scripts/}; full manifest \texttt{results/tables/e18\_manifest.json};
+deliverable hashes \texttt{dist/SHA256SUMS.txt}.
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,17 @@
+{
+  "experiment": "E10B",
+  "version": "E10B-v1",
+  "code_version": "f1d00d078f7f3ad7",
+  "n_nulls": 100,
+  "seed_base": 100,
+  "k_panel": 4,
+  "panel_seed": 0,
+  "graph_sha256": "eac63d2737b6ef5bd83d8833357b31d42bae503f7a7ea33f79578d3d504bb2a9",
+  "nodes_sha256": "88f87236b6d0aaf24068f8cc8fe171c64802279fbee7356eebc6e0a74e71477d",
+  "matched_pairs_sha256": "d5dd699e6b11e41eec8518bb0c1523bd208666528377557ef7d7fc12f6bf546e",
+  "n_nodes": 138584,
+  "n_edges": 3732460,
+  "n_pair_nodes": 1696,
+  "raw_source_ref": "clones/GCAE/FAFB_v783",
+  "note": "graph derived from data/processed/graph_pairs.parquet via the frozen build_graph(); raw FAFB v783 stays local"
+}

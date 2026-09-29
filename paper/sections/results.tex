@@ -1,0 +1,93 @@
+% 4. Results
+\section{Results}
+
+\subsection{Dataset and network characteristics}
+The analysis graph contains 138,584 neurons and 3,732,460 directed
+connections (mean degree 26.8; density $1.92\times10^{-4}$; reciprocity
+0.083; largest weak component 98.4\%; Table~\ref{tab:network}). Edge-level
+neurotransmitter composition is ACh 60.3\%, GABA 22.4\%, GLUT 15.3\%.
+
+\subsection{Neuron-level structural control-impact distribution}
+Structural control impact is extremely right-skewed (Fig.~\ref{fig:network}A):
+the median tested neuron ($n=3{,}518$) accounts for
+$\sim$$9.7\times10^{-6}$ of whole-brain efficiency, the 99th percentile
+for $3.9\times10^{-4}$, and the top neuron for $2.40\times10^{-2}$ ---
+three orders of magnitude above the median. Chokepoints are rare, and
+their impact is not predictable from rank alone. Top-50 chokepoints are
+high-degree (median total degree 1,925 vs.\ 315--317 across tested
+neurons) and output-dominated (median out-degree 1,050 vs.\ in-degree
+566; Fig.~\ref{fig:network}C), and are anatomically concentrated: 21/50
+visual centrifugal, 19/50 optic lobe, 6 central brain
+(Fig.~\ref{fig:network}B).
+
+\subsection{GABAergic hypothesis test}
+Among 848 degree-matched GABA--ACh pairs, GABA neurons showed a small
+raw advantage (median difference $8.7\times10^{-7}$; Cliff's
+$\delta=0.111$; Wilcoxon $p=0.0011$; permutation $p\approx10^{-4}$;
+Fig.~\ref{fig:gaba}A--B; Table~\ref{tab:gaba}). This naive comparison is,
+however, confounded by degree: GABAergic neurons are on average
+higher-degree \cite{lin2024}. A degree-controlled regression found no
+residual GABA association ($\beta_1=-0.025$, permutation $p=0.95$;
+Fig.~\ref{fig:degctrl}), and the GABA fraction among top-50 chokepoints
+(54\%) matched the tested population (52\%).
+
+\subsection{Degree-preserving null-network analysis}
+The decisive test compared the observed effect against 100
+degree-preserving null networks, each verified to preserve both degree
+sequences exactly (Fig.~\ref{fig:nullproc}; Table~\ref{tab:nulls}). At
+matched panel size the observed $\delta$ was 0.098 against a null
+ensemble of $0.071\pm0.022$ (range 0.008--0.121; 95th percentile 0.107);
+10/100 nulls met or exceeded the observed value (empirical
+$p_\delta=0.109$; $z=1.21$), and the median-difference statistic
+independently placed the observation deep inside the ensemble
+($p=0.782$; Fig.~\ref{fig:nulls}). Both pre-registered statistics agree:
+the matched-pair GABA effect is compatible with degree-preserving
+structure. Per the interpretation rule locked before unblinding
+(Scenario B), the primary hypothesis is rejected.
+
+\subsection{Visual-centrifugal enrichment}
+Control impact concentrates in visual-centrifugal architecture
+(Table~\ref{tab:vc}; Fig.~\ref{fig:vc}A--B). The top-50 set contains
+21 visual-centrifugal neurons: 11.7$\times$ the tested-population base
+rate, and 2.63$\times$ the expectation under per-slot degree-matched
+draws ($z=5.3$, $p=10^{-4}$). The enrichment is consistent at $K=25$
+(2.47$\times$, $z=3.3$) and $K=100$ (2.15$\times$, $z=4.9$). Central-brain
+neurons are under-represented (0.27$\times$). Degree explains most ---
+but not all --- of the concentration.
+
+\subsection{Individual structural chokepoints}
+Under the selection-bias-corrected per-node analysis (E14-v2), 13/50 top
+chokepoints individually beat their degree-matched peers (empirical
+$p<0.0005$--$0.01$); 10 of the 13 are visual-system neurons
+(Table~\ref{tab:chokepoints}; Fig.~\ref{fig:vc}C). The strongest neuron
+(rank 1; GABAergic optic, degree 12,444; CIS 2.40\%) shows 2.35$\times$
+its peer-median impact. Rank 3 is an octopaminergic visual-centrifugal
+neuron of modest degree (858) at ${\sim}156\times$ peer median --- a
+low-degree structural chokepoint whose impact degree cannot explain.
+22/50 are degree-driven hubs; 9 nodes with peer pools below 10 are
+flagged. Neighborhood neurotransmitter composition around top-50
+chokepoints shows no GABA excess (16.7\% vs.\ 16.9\% background;
+ACh-dominated), so chokepoint leverage is not an inhibitory-neighborhood
+phenomenon.
+
+\subsection{Robustness analyses}
+Across four independent $k{=}32$ source panels, Spearman rank correlation
+with the main CIS ranking was 0.965/0.953/0.905/0.882 (top-100 four-way
+Jaccard 0.63; top-50 0.40, indicating top-50 membership is panel-sensitive
+while top-100-level conclusions are stable). The $k$-ladder
+($k8$--$k16$ 0.66; $k8$--$k32$ 0.67; $k16$--$k32$ 0.86) validates the
+two-stage design: screening is deliberately coarse, finalists agree at
+$k\geq16$. Broadening the inhibitory set to GABA+GLUT (967 pairs) leaves
+the matched-pair picture unchanged ($\delta=0.107$). CIS correlates with
+total degree ($\rho=0.58$), out-degree (0.54), and in-degree (0.49); a
+reachability-drop metric correlates moderately ($\rho=0.39$) and is
+reported in parallel.
+
+\subsection{Sensitivity limitation}
+The full no-threshold connection-table sensitivity analysis could not be
+completed in the available 8-GB RAM environment (the no-threshold table
+collapses to ${\sim}50$M node pairs and produced an out-of-memory
+condition); it is deferred to a high-RAM environment. The Buhmann
+connection table was excluded as methodologically non-comparable
+(different reconstruction pipeline). This limitation is documented, not
+resolved; every other completed robustness axis is reported above.

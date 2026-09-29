@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: >-
+  If you use this research package or its results, please cite it using
+  the metadata from this file. A permanent archival DOI will be added
+  upon release through an archival repository.
+title: >-
+  Neuron-Level Structural Control Impact Reveals Visual-Centrifugal
+  Chokepoints in the Drosophila Connectome
+authors:
+  - family-names: Vardhan
+    given-names: Harsha
+    email: harshavardhanmalipeddi1@gmail.com
+version: 1.1.0
+date-released: "2026-09-29"
+license: CC-BY-NC-4.0
+repository-code: "https://github.com/harsha-vardhan-2006/fruitfly_paper"
+abstract: >-
+  Structural control-impact analysis of the adult Drosophila brain
+  connectome (FlyWire FAFB v783). Neuron-level removal perturbation
+  (Control Impact Score), degree-matched neurotransmitter comparison,
+  and 100 degree-preserving null networks. The primary GABAergic
+  hypothesis was not supported after degree control and null testing;
+  high-control-impact neurons were strongly enriched in
+  visual-centrifugal architecture (2.63-fold after degree matching,
+  z = 5.30, p = 1e-4; 13/50 top chokepoints exceed degree-matched
+  peers).
+keywords:
+  - connectomics
+  - Drosophila
+  - FAFB
+  - FlyWire
+  - network neuroscience
+  - structural control impact
+  - visual centrifugal

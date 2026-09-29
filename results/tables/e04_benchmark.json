@@ -1,0 +1,44 @@
+{
+  "experiment": "E04 - Control Impact Score definition, validation, benchmark",
+  "date": "2026-09-15",
+  "metric": {
+    "definition": "CIS(i) = 1 - S(G-i)/S(G), S = sum over ordered pairs of 1/d, d = unweighted directed shortest path",
+    "convention": "freeze-N (denominator N_F*(N_F-1) fixed at freeze time); free-N renormalization reported as diagnostic only",
+    "range": "[0, 1]",
+    "primary_estimator": "fixed-source-panel BFS (cis_bfs_panel): same k sources for all targets; per-target edge masking via COO; CIS = 1 - S_panel(G-i)/S_panel(G)",
+    "secondary_diagnostic": "reachable-pair fraction drop (reach_drop) from the same BFS pass",
+    "config": {"n_sources": "k=8 screening, k=32-64 re-rank finalists (two-stage)", "seed": 0}
+  },
+  "gate1_validation": {
+    "result": "PASS 9/9 (v2 suite)",
+    "tests": [
+      "test_chain_removal_of_middle_node (47/77 exact)",
+      "test_chain_of_three_middle_is_total_collapse (CIS=1)",
+      "test_chain_tail_removal_and_freeN_artifact (0.6 exact; free-N -0.2 artifact documented)",
+      "test_star_center_maximal_and_leaf_quarter (1.0 / 0.25)",
+      "test_random_removals_small_and_bounded",
+      "test_bridge_beats_local_cluster_node",
+      "test_panel_with_all_sources_equals_exact (atol 1e-9)",
+      "test_panel_stability_on_structured_graph (rho>0.9)",
+      "test_panel_monotone_bounded_on_real_subgraph"
+    ],
+    "v1_history": "v1 suite FAILED 1/5 and exposed a denominator unit-mismatch bug (node count vs pair count) in cis_exact_full; fixed; v1 run preserved in RESEARCH_LOG.md E04",
+    "k_sweep_insight": "panel-to-panel stability is unmeasurable on structureless random graphs (all true CIS ~ 0; observed rho 0.63/-0.23/0.05/0.15 at k=64/128/256/512 = noise on a constant); stability must be assessed on structured graphs (rho>0.9 at k=30 on barbell fixture)"
+  },
+  "benchmark": {
+    "graph": {"nodes": 138584, "edges": 3732460, "source": "data/processed/graph_pairs.parquet"},
+    "baseline_panel_bfs_s": {"k8": 1.5, "k32": 4.0},
+    "per_target_s_at_k8": 1.63,
+    "sample_real_cis": [
+      {"target": 100, "cis": 8.0e-06, "reach_drop": 3.644811e-10},
+      {"target": 50000, "cis": 1.74e-04, "reach_drop": 3.644811e-10},
+      {"target": 100000, "cis": 8.0e-06, "reach_drop": 3.644811e-10}
+    ],
+    "extrapolation_k8": {"1000_targets_min": 27, "5000_targets_min": 136, "10000_targets_h": 4.5},
+    "hardware": "local CPU (Windows, py 3.13.2); scipy dijkstra unweighted"
+  },
+  "decisions": {
+    "computational_strategy": "Strategy C (candidate-first) + panel estimator, two-stage k: screen candidates at k=8, re-rank finalists at k=32-64",
+    "gate_status": {"gate1_metric_validation": "PASS", "gate2_scale": "READY (feasibility demonstrated)"}
+  }
+}

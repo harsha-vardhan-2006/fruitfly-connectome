@@ -1,0 +1,114 @@
+% 3. Materials and Methods
+\section{Materials and Methods}
+
+\subsection{Connectome dataset}
+We used FlyWire FAFB v783 (Princeton exports), released under CC BY-NC
+4.0 \cite{dorkenwald2024,schlegel2024}. Raw files were never modified; all
+derived artifacts were written to processed/result directories and
+checksummed (SHA256; 19 raw files recorded in
+\texttt{e18\_manifest.json} and re-verified during finalization).
+
+\subsection{Graph representation}
+Neurons are nodes; synaptic connections are directed edges. The
+thresholded connection table (5,342,446 per-neuropil rows) was collapsed
+to unique (pre, post) pairs (3,732,460 edges), summing synapse counts
+across neuropils; per-pair neurotransmitter is the synapse-weighted
+majority. All root identifiers passed 18-digit FAFB validation; no
+self-loops; 100\% of edge endpoints present in the metadata universe. The
+analysis graph is the binary directed adjacency on 138,584 nodes (mean
+degree 26.8; density $1.92\times10^{-4}$; reciprocity 0.083; largest weak
+component 98.4\%).
+
+\subsection{Structural control-impact metric}
+For the directed graph $G$, let
+$S(G)=\sum_{i\neq j} 1/d(i,j)$, where $d(i,j)$ is the unweighted directed
+shortest-path length. The \emph{Control Impact Score} of neuron $i$ is
+\[
+\mathrm{CIS}(i) \;=\; 1 - \frac{S(G-i)}{S(G)},
+\]
+the fractional loss of global directed efficiency when $i$ is removed.
+The freeze-$N$ convention fixes the normalizing node count at removal
+time, bounding CIS in $[0,1]$; free-$N$ renormalization is reported as a
+diagnostic only. CIS measures \emph{structural sensitivity under node
+removal}: it quantifies how much the wiring diagram's global
+communication efficiency depends on a single neuron. It is not a measure
+of firing, causality, or behavioral necessity.
+
+\subsection{Computational strategy and degree control}
+Exact all-pairs BFS is infeasible at whole-brain scale, so CIS was
+estimated with a fixed-source-panel BFS: $k$ sources drawn once, identical
+across targets, with per-target edge masking via COO arrays;
+$\mathrm{CIS}=1-S_{\mathrm{panel}}(G-i)/S_{\mathrm{panel}}(G)$. The
+estimator is exact-consistent (panel($k{=}N$) equals exact computation to
+$10^{-9}$; 9/9 synthetic validation tests including chain 47/77 exact,
+three-chain collapse $=1$, star center $=1$, star leaf $=0.25$, bridge
+$\gg$ local). Screening used $k{=}8$ on all 3,518 pre-registered targets
+(union of top-1\% by total degree, in/out strength, and PageRank; all
+GABAergic neurons above the 90th GABA degree percentile; 500 random
+background); finalists were re-ranked at $k{=}32$ (two source-panel
+seeds). For group comparisons, GABAergic neurons were matched to ACh
+controls 1:1 without replacement on total degree within $\pm10\%$
+(larger-degree GABA matched first; rule pre-registered before
+unblinding), yielding 848 pairs.
+
+\subsection{Neurotransmitter analysis}
+Per-neuron neurotransmitter predictions derive from Schlegel et al.\
+\cite{schlegel2024}. Classes were preserved (GABA, ACh, GLUT, DA, SER,
+OCT, unknown); the primary comparison is GABA vs.\ ACh only. GLUT was
+analyzed separately (sign context-dependent; a GABA+GLUT sensitivity is
+reported), and modulatory classes were excluded from E/I claims. Unknown
+neurons were retained but excluded from identity comparisons.
+
+\subsection{Null-network analysis}
+The null model is a directed configuration model preserving both degree
+sequences exactly: vectorized stub matching with self-loop/duplicate
+repair, where repair swaps use partner sets distinct from and disjoint to
+the defect set, and non-converging rounds trigger rejection redraw ---
+every accepted draw has exact degree sequences, verified per null inside
+the run and locked by regression tests (\texttt{tests/test\_null\_models.py}).
+Degree-preserving nulls are required because CIS grows steeply with
+degree: comparing the raw GABA--ACh effect to randomly rewired networks
+with the same degree structure asks whether the observed effect exceeds
+what generic degree-bearing topology necessarily produces. The final
+E10B ensemble contains $n=100$ nulls (null\_id 0--99, seeds $100+i$,
+three parallel workers, crash-safe checkpointing); the observed statistic
+enters the comparison at the same panel size ($k{=}4$) as the nulls.
+
+\subsection{Statistical testing}
+Matched pairs: Wilcoxon signed-rank; label-permutation test on the median
+difference (10,000 permutations); Cliff's $\delta$; ordinary least squares
+$\log_{10}(\mathrm{CIS}+\varepsilon)\sim\mathrm{GABA} +
+\log_{10}(\mathrm{degree}+1)$ with permutation inference on $\beta_1$.
+Null comparison: empirical $p$ as the fraction of nulls meeting or
+exceeding the observed statistic, plus a $z$ score against the null
+ensemble. The interpretation rule (Scenario A/B/C) was locked before
+unblinding: observed inside the null ensemble (Scenario B) rejects the
+hypothesis.
+
+\subsection{Visual-centrifugal enrichment}
+Top-$K$ chokepoint sets ($K=25,50,100$, fixed before testing) were drawn
+from the $k{=}32$ CIS ranking. Two null controls (10,000 replicates each)
+calibrate expectations: (A) random draws from the 3,518 tested neurons;
+(B) per-slot degree-matched draws ($\pm10\%$ log-degree, nearest-50
+fallback). Enrichment and $z$ scores are reported against control B, the
+degree-matched null, which removes the degree confound.
+
+\subsection{Individual chokepoint analysis (E14-v2)}
+Each top-50 node was tested against its degree-matched peers ($\pm10\%$
+total degree; pools calibrated on the full tested population; the node
+itself excluded from its peer pool). Per-node empirical $p$-values and
+CIS-excess ratios are reported; peer-pool sizes are recorded and pools
+with fewer than 10 peers are flagged. This design corrects the selection
+bias of testing degree excess on a set selected for high CIS.
+
+\subsection{Reproducibility}
+Python 3.13.2; pandas 2.3.3; numpy 2.4.2; scipy 1.18.0; pyarrow 23.0.1;
+matplotlib 3.11.2 (figures only). NetworkX was deliberately not used.
+All experiments are scripted (\texttt{src/}), seeded where stochastic,
+checkpointed, and logged in the append-only research log. Final artifacts:
+\texttt{results/final/e10b\_final.json} (byte-identical to
+\texttt{results/tables/e10b\_results.json}), per-null rows
+\texttt{e10b\_nulls.csv}, an independent recomputation verifier
+(\texttt{scripts/verify\_e10b\_final.py}), a 43-row number audit, and the
+SHA256 manifest. Superseded interim artifacts are quarantined under
+\texttt{results/superseded/}.

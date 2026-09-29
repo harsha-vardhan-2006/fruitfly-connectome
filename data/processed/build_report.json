@@ -1,0 +1,75 @@
+{
+  "dataset": "FAFB v783 (Princeton)",
+  "steps": {
+    "neuron_core": {
+      "rows": 139255,
+      "nt_sign_counts": {
+        "excitatory": 82298,
+        "unknown": 19658,
+        "glut": 19605,
+        "inhibitory": 16017,
+        "modulatory": 1677
+      },
+      "side_counts": {
+        "left": 69959,
+        "right": 69093,
+        "center": 173,
+        "NaN": 30
+      },
+      "super_class_counts": {
+        "optic": 77873,
+        "central": 32381,
+        "sensory": 16938,
+        "visual_projection": 7684,
+        "ascending": 1750,
+        "descending": 1305,
+        "sensory_ascending": 612,
+        "visual_centrifugal": 522,
+        "motor": 110,
+        "endocrine": 80
+      }
+    },
+    "root_id_validation": {
+      "root_id": {
+        "n": 139255,
+        "min": 720575940596125868,
+        "max": 720575940661339777,
+        "all_18_digit_fafb_pattern": true
+      }
+    },
+    "edges_raw": {
+      "rows": 5342446,
+      "pairs_before_collapse": 3732460,
+      "unique_neurons_in_edges": 138584,
+      "nt_types": {
+        "ACH": 3210049,
+        "GABA": 1172932,
+        "GLUT": 826380,
+        "DA": 63704,
+        "SER": 40396,
+        "OCT": 28985
+      }
+    },
+    "edges_collapsed": {
+      "rows": 3732460,
+      "self_loops": 0,
+      "id_validation": {
+        "pre_root_id": {
+          "n": 3732460,
+          "min": 720575940596125868,
+          "max": 720575940661339777,
+          "all_18_digit_fafb_pattern": true
+        },
+        "post_root_id": {
+          "n": 3732460,
+          "min": 720575940596125868,
+          "max": 720575940661338497,
+          "all_18_digit_fafb_pattern": true
+        }
+      },
+      "pre_in_metadata_frac": 1.0,
+      "post_in_metadata_frac": 1.0
+    }
+  },
+  "elapsed_seconds": 38.1
+}

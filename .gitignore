@@ -1,0 +1,41 @@
+# ============================================================
+# RAW FAFB v783 DATASET — NEVER COMMIT (CC BY-NC 4.0)
+# 19 gzipped CSV exports + SWC morphology archive at repo root.
+# Checksums live in results/tables/e18_manifest.json (19/19 verified).
+# See LICENSE_NOTES.md before any redistribution.
+# ============================================================
+/*.csv.gz
+/*.gz
+/*.zip
+
+# ... but keep the final deliverable package
+!dist/*.zip
+
+# ---- Python ----
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+
+# ---- Secrets / credentials ----
+.env
+.env.*
+*.key
+credentials*
+
+# ---- OS / editor / temp ----
+Thumbs.db
+.DS_Store
+~$*
+*.tmp
+*.swp
+
+# ---- Large transient checkpoints (kept out of git; results/ CSVs/JSONs stay in) ----
+notebooks/.ipynb_checkpoints/
+
+# ---- E13.6b regenerable intermediate (not shipped; rebuilt in ~7 min) ----
+# scripts/run_e13b_nothreshold_sensitivity.py recreates this from the raw
+# no-threshold table; excluded to keep the release repo lean.
+data/processed/e13b_nothr_pairs.parquet

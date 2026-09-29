@@ -1,0 +1,59 @@
+{
+  "experiment": "E13.6b-nothreshold-sensitivity",
+  "date": "2026-09-29",
+  "protocol": {
+    "estimator": "cis_bfs_panel twin (equivalence-gated, max|dcis|=0.00e+00)",
+    "k_panel": 4,
+    "panel_seed": 0,
+    "matched_pairs": "E08 848 pairs (pre-registered)",
+    "node_universe": "frozen thresholded-graph universe (138,584 nodes)",
+    "edge_table": "connections_princeton_no_threshold.csv.gz",
+    "memory_strategy": "chunked load, vectorized pair-collapse; peak RSS < 1 GB"
+  },
+  "edge_stats": {
+    "thresholded_pairs": 3732460,
+    "nothr_pairs": 19765143,
+    "added_pairs_vs_thresholded": 16032683,
+    "frac_added": 4.295473494692509,
+    "thresholded_syn_total": 50666648,
+    "nothr_syn_total": 76933001
+  },
+  "observed_nothr": {
+    "median_gaba": 8.288010789225808e-06,
+    "median_ctrl": 8.748455833096358e-06,
+    "median_diff": -4.6044504387054985e-07,
+    "cliffs_delta": -0.11652139328942679,
+    "n_g": 848,
+    "n_c": 848
+  },
+  "observed_thresholded_recomputed": {
+    "median_gaba": 1.1255253950848143e-05,
+    "median_ctrl": 1.0593180188922524e-05,
+    "median_diff": 6.62073761925619e-07,
+    "cliffs_delta": 0.09788431158775368
+  },
+  "observed_thresholded_frozen": {
+    "median_gaba": 1.1255253950848143e-05,
+    "median_ctrl": 1.0593180188922524e-05,
+    "median_diff": 6.62073761925619e-07,
+    "cliffs_delta": 0.09788431158775368,
+    "n_g": 848,
+    "n_c": 848
+  },
+  "equivalence_gate": {
+    "n_targets": 24,
+    "max_abs_dcis": 0.0,
+    "threshold": 1e-12,
+    "passed": true
+  },
+  "null_comparison": {
+    "n_nulls": 100,
+    "null_delta_mean": 0.07132400876646489,
+    "null_delta_sd": 0.02203395436225213,
+    "p_delta_nothr_vs_nulls": 1.0,
+    "p_median_nothr_vs_nulls": 0.9801980198019802,
+    "z_vs_null": -8.525269634655432
+  },
+  "runtime_s": 1102.3,
+  "verdict_note": "same degree-preserving-null comparison as E10B: p_delta >= 0.05 => the GABA-vs-ACh effect is again compatible with degree-preserving structure under the no-threshold edge definition"
+}

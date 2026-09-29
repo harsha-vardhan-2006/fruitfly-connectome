@@ -1,0 +1,10 @@
+{
+  "n_total": 138584,
+  "top1_size": 1385,
+  "n_union_degree_strength_pagerank": 2086,
+  "gaba_degree_threshold": 216.0,
+  "n_gaba_hot": 937,
+  "n_background": 500,
+  "n_targets_total": 3518,
+  "seed": 0
+}

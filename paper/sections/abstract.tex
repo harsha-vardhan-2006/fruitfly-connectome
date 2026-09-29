@@ -1,0 +1,49 @@
+% Abstract
+\begin{abstract}
+\noindent\textbf{Background.} The FlyWire FAFB v783 connectome provides the
+complete wiring diagram of the adult female \emph{Drosophila} brain
+(139,255 neurons; $\sim$3.7M thresholded connections at the pair level),
+enabling neuron-level interrogation of directed network structure. Prior
+work showed that high-degree neurons are disproportionately GABAergic,
+but degree alone does not establish structural network control.
+
+\noindent\textbf{Objective.} Test whether GABAergic identity predicts
+neuron-level structural control impact --- the sensitivity of global
+directed network efficiency to the removal of a single neuron --- beyond
+what connectivity degree and degree-preserving network structure explain;
+and characterize where the strongest structural chokepoints reside.
+
+\noindent\textbf{Methods.} We defined the Control Impact Score,
+$\mathrm{CIS}(i)=1-S(G-i)/S(G)$, with $S$ the sum of inverse directed
+shortest-path lengths (freeze-$N$ convention), pre-registered 3,518
+perturbation targets, computed CIS with a fixed-source-panel BFS estimator
+(validated to $10^{-9}$ against exact computation), performed
+pre-registered degree matching (GABA vs.\ ACh, total degree $\pm10\%$;
+848 pairs), and compared the observed effect against 100 degree-preserving
+null networks with exactly verified in/out degree sequences.
+
+\noindent\textbf{Results.} Structural control impact is extremely skewed:
+the median tested neuron accounts for $\sim$$10^{-5}$ of whole-brain
+efficiency; the top neuron accounts for 2.40\%. The raw matched-pair
+GABA--ACh effect was small (Cliff's $\delta=0.111$, Wilcoxon $p=0.0011$),
+but a degree-controlled regression found no residual GABA association
+($\beta_1=-0.025$, permutation $p=0.95$), and the observed statistic at
+matched panel size ($\delta=0.098$) fell inside the degree-preserving null
+ensemble (null $\delta=0.071\pm0.022$; empirical $p_\delta=0.109$;
+median-difference $p=0.782$; $z=1.21$). In contrast, the top-50
+chokepoints were strongly enriched for visual-centrifugal neurons
+(21/50; 11.7$\times$ raw; 2.63$\times$ after degree matching, $z=5.3$,
+$p=10^{-4}$; consistent at $K=25$ and $K=100$), and 13/50 individually
+exceeded their degree-matched peers (10/13 visual-system), including a
+low-degree octopaminergic centrifugal neuron at ${\sim}156\times$ its
+peer-median impact.
+
+\noindent\textbf{Conclusions.} The pre-registered GABA hypothesis is not
+supported: the analysis does not provide evidence that GABAergic identity
+independently predicts structural control impact after accounting for
+degree and degree-preserving structure. Instead, removal-based
+network-control sensitivity concentrates in visual-centrifugal
+architecture, yielding a concrete, testable structural chokepoint map of
+the adult fly brain. All claims concern structural network sensitivity,
+not functional causality.
+\end{abstract}

@@ -1,0 +1,48 @@
+[e13b] 22:02:54 sanity: thresholded delta recomputed=0.097884 (recomputed=0.097884, match=True)
+[e13b] 22:02:55 frozen universe: 138,584 nodes
+[e13b] 22:03:15 rows=16,000,000 unique_pairs=14,628,493 elapsed=19s
+[e13b] 22:03:27 scan done: 22,285,323 rows -> 19,765,143 unique pairs (32s); wrote e13b_nothr_pairs.parquet
+[e13b] 22:03:32 {
+  "thresholded_pairs": 3732460,
+  "nothr_pairs": 19765143,
+  "added_pairs_vs_thresholded": 16032683,
+  "frac_added": 4.295473494692509,
+  "thresholded_syn_total": 50666648,
+  "nothr_syn_total": 76933001
+}
+[e13b] 22:03:39 equivalence gate: 24 targets, max|dcis|=0.000e+00
+[e13b] 22:03:39 no-threshold graph: n=138,584 m=19,765,143
+[e13b] 22:03:40 matched-pair nodes: 1696 (848 GABA + 848 ACh)
+[e13b] 22:05:02 100/1696 (133s elapsed, eta 35 min)
+[e13b] 22:06:22 200/1696 (213s elapsed, eta 27 min)
+[e13b] 22:07:42 300/1696 (294s elapsed, eta 23 min)
+[e13b] 22:09:39 400/1696 (411s elapsed, eta 22 min)
+[e13b] 22:11:50 500/1696 (541s elapsed, eta 22 min)
+[e13b] 22:13:36 sanity: thresholded delta recomputed=0.097884 (recomputed=0.097884, match=True)
+[e13b] 22:13:36 reusing e13b_nothr_pairs.parquet (delete to force rebuild)
+[e13b] 22:13:44 {
+  "thresholded_pairs": 3732460,
+  "nothr_pairs": 19765143,
+  "added_pairs_vs_thresholded": 16032683,
+  "frac_added": 4.295473494692509,
+  "thresholded_syn_total": 50666648,
+  "nothr_syn_total": 76933001
+}
+[e13b] 22:13:56 equivalence gate: 24 targets, max|dcis|=0.000e+00
+[e13b] 22:13:56 no-threshold graph: n=138,584 m=19,765,143
+[e13b] 22:13:56 matched-pair nodes: 1696 (848 GABA + 848 ACh)
+[e13b] 22:13:56 resuming: 500/1696 already done
+[e13b] 22:14:54 sanity: thresholded delta recomputed=0.097884 (recomputed=0.097884, match=True)
+[e13b] 22:14:54 reusing e13b_nothr_pairs.parquet (delete to force rebuild)
+[e13b] 22:15:06 {
+  "thresholded_pairs": 3732460,
+  "nothr_pairs": 19765143,
+  "added_pairs_vs_thresholded": 16032683,
+  "frac_added": 4.295473494692509,
+  "thresholded_syn_total": 50666648,
+  "nothr_syn_total": 76933001
+}
+[e13b] 22:15:25 equivalence gate: 24 targets, max|dcis|=0.000e+00
+[e13b] 22:15:26 no-threshold graph: n=138,584 m=19,765,143
+[e13b] 22:15:26 matched-pair nodes: 1696 (848 GABA + 848 ACh)
+[e13b] 22:15:26 resuming: 500/1696 already done

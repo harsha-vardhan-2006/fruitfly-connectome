@@ -1,0 +1,30 @@
+# Robustness configuration (E13 sweeps; completed items marked)
+dataset_variants:
+  - name: princeton_thresholded
+    status: DONE (primary)
+  - name: connections_princeton_no_threshold
+    status: PENDING (publication run)
+  - name: connections_buhmann_no_threshold
+    status: PENDING (publication run)
+
+threshold_sensitivity:
+  values: [2, 5, 10]
+  status: PENDING (5 applied upstream; 2/10 need refilter from no-threshold)
+
+metric_variants:
+  primary: global_efficiency_cis
+  secondary: reachable_pair_fraction_drop
+  agreement_spearman: 0.392   # measured E13; both metrics reported
+
+panel_sizes:
+  screen: 8
+  rerank: [32, 64]   # 32 done; 64 reserved for publication rerank
+
+gaba_definition_variants:
+  - strict: nt_type == GABA only        # DONE (primary)
+  - broad: GABA + GLUT-as-inhibitory    # PENDING (sensitivity)
+
+seeds:
+  - {screen: 0}
+  - {rerank: [0, 1]}
+  multi_seed_stability_pearson: 0.767   # measured E13

@@ -1,0 +1,58 @@
+% 1. Introduction
+\section{Introduction}
+
+Whole-brain connectomes now make it possible to ask, at synaptic
+resolution, which individual neurons matter most for the directed flow of
+information through an entire central nervous system. For the adult female
+\emph{Drosophila melanogaster}, the FlyWire reconstruction of the Full
+Adult Fly Brain (FAFB) volume provides a dense, verified wiring diagram of
+139,255 neurons and roughly 3.7 million thresholded synaptic connections
+\cite{dorkenwald2024}, with cell typing and neurotransmitter predictions
+\cite{schlegel2024} and a complete visual-system parts list
+\cite{matsliah2024}.
+
+Directed network structure matters because the brain is not an undirected
+web of interactions: influence propagates along asymmetric anatomical
+paths, and the global ease of communication --- formalized as network
+efficiency, the mean inverse shortest-path length over all directed neuron
+pairs --- depends on how those paths are organized. Prior network analyses
+of the fly connectome established rich-club organization, motif structure,
+and the important observation that high-total-degree neurons are mostly
+GABAergic \cite{lin2024}; earlier work examined information flow at coarser
+resolution \cite{shih2015}, and hierarchical modularity has been
+characterized \cite{kunin2023}.
+
+A neuron's importance as a \emph{structural control point}, however, cannot
+be read from its degree alone. Bridging positions can make sparse neurons
+disproportionately influential, whereas removing one of several parallel
+hubs may barely affect global communication. Removal-based perturbation ---
+delete a node, recompute global efficiency, and record the fractional loss
+--- captures this directly. Such analyses exist in aggregate,
+degree-ordered form for the fly brain \cite{lin2024} and in other systems
+\cite{uzel2022}, but a per-neuron, neurotransmitter-resolved,
+degree-controlled ranking with null-model validation has not, to our
+knowledge, been reported for the adult connectome.
+
+Neurotransmitter identity is a natural candidate organizing variable: if
+inhibition were preferentially positioned at high-leverage network
+locations, this would constrain how the brain balances excitation and
+control. The association between GABAergic identity and high degree is
+already documented \cite{lin2024}; the open question is whether any
+\emph{excess} control impact remains after degree is accounted for.
+
+We therefore pre-registered a perturbation pipeline and froze the
+hypothesis before unblinding: \emph{after accounting for degree, GABAergic
+identity is associated with disproportionately high per-neuron structural
+control impact.} We tested this with (i) neuron-level removal
+perturbation on the FAFB v783 connectome using a validated Control Impact
+Score (CIS); (ii) degree-matched GABA--ACh comparison; (iii) 100
+degree-preserving null networks; and (iv) a regression of control impact
+on degree and neurotransmitter identity. As a pre-planned secondary
+analysis, we mapped where the strongest structural chokepoints reside and
+tested their anatomical enrichment against degree-matched controls.
+
+Throughout, we distinguish network topology from functional neural
+dynamics: every quantity here is structural, computed from the wiring
+diagram alone. ``Structural control impact'' denotes sensitivity of
+global efficiency to computational node removal; it does not measure
+firing, causality, or behavioral necessity.

@@ -1,0 +1,15 @@
+[worker localtest] loading inputs from kaggle_package\e10b_input ...
+[worker localtest] graph (138584, 138584) nnz=3732460 code_version=f1d00d078f7f3ad7
+[worker localtest] claimed null_0000
+[worker localtest] null_0000 FAILED: OSError("Cannot save file into a non-existent directory: 'G:\\fruitfly\\kaggle_package\\e10b_input\\code\\results\\tables'")
+[worker localtest] claimed null_0001
+[worker localtest] null_0001 FAILED: OSError("Cannot save file into a non-existent directory: 'G:\\fruitfly\\kaggle_package\\e10b_input\\code\\results\\tables'")
+[worker localtest] claimed null_0002
+[worker localtest] null_0002 FAILED: OSError("Cannot save file into a non-existent directory: 'G:\\fruitfly\\kaggle_package\\e10b_input\\code\\results\\tables'")
+[worker localtest] claimed null_0003
+[worker localtest] null_0003 FAILED: OSError("Cannot save file into a non-existent directory: 'G:\\fruitfly\\kaggle_package\\e10b_input\\code\\results\\tables'")
+[worker localtest] claimed null_0004
+[worker localtest] null_0004 FAILED: OSError("Cannot save file into a non-existent directory: 'G:\\fruitfly\\kaggle_package\\e10b_input\\code\\results\\tables'")
+[worker localtest] claimed null_0005
+[worker localtest] null_0005 FAILED: OSError("Cannot save file into a non-existent directory: 'G:\\fruitfly\\kaggle_package\\e10b_input\\code\\results\\tables'")
+[worker localtest] claimed null_0006

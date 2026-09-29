@@ -1,0 +1,29 @@
+[e13b] 22:16:38 sanity: thresholded delta recomputed=0.097884 (recomputed=0.097884, match=True)
+[e13b] 22:16:38 reusing e13b_nothr_pairs.parquet (delete to force rebuild)
+[e13b] 22:16:46 {
+  "thresholded_pairs": 3732460,
+  "nothr_pairs": 19765143,
+  "added_pairs_vs_thresholded": 16032683,
+  "frac_added": 4.295473494692509,
+  "thresholded_syn_total": 50666648,
+  "nothr_syn_total": 76933001
+}
+[e13b] 22:16:57 equivalence gate: 24 targets, max|dcis|=0.000e+00
+[e13b] 22:16:58 no-threshold graph: n=138,584 m=19,765,143
+[e13b] 22:16:58 matched-pair nodes: 1696 (848 GABA + 848 ACh)
+[e13b] 22:16:58 resuming: 500/1696 already done
+[e13b] 22:18:31 600/1696 (114s elapsed, eta 3 min)
+[e13b] 22:19:52 700/1696 (196s elapsed, eta 5 min)
+[e13b] 22:21:57 800/1696 (320s elapsed, eta 6 min)
+[e13b] 22:23:58 900/1696 (442s elapsed, eta 7 min)
+[e13b] 22:25:25 1000/1696 (529s elapsed, eta 6 min)
+[e13b] 22:26:45 1100/1696 (609s elapsed, eta 5 min)
+[e13b] 22:28:01 1200/1696 (684s elapsed, eta 5 min)
+[e13b] 22:29:29 1300/1696 (772s elapsed, eta 4 min)
+[e13b] 22:31:08 1400/1696 (871s elapsed, eta 3 min)
+[e13b] 22:32:31 1500/1696 (955s elapsed, eta 2 min)
+[e13b] 22:33:47 1600/1696 (1030s elapsed, eta 1 min)
+[e13b] 22:34:58 1696/1696 (1102s elapsed, eta 0 min)
+[e13b] 22:34:58 no-threshold observed: {"median_gaba": 8.288010789225808e-06, "median_ctrl": 8.748455833096358e-06, "median_diff": -4.6044504387054985e-07, "cliffs_delta": -0.11652139328942679, "n_g": 848, "n_c": 848}
+[e13b] 22:34:59 wrote results/tables/e13b_nothr_results.json (delta=-0.1165, p_delta=1.000)
+[e13b] 22:34:59 done in 1102s

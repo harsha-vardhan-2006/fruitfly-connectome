@@ -1,0 +1,68 @@
+{
+  "pilot_scale": {
+    "n_nulls": 5,
+    "k_panel": 4,
+    "n_pair_nodes": 1696
+  },
+  "observed_k4": {
+    "median_gaba": 1.1255253950848143e-05,
+    "median_ctrl": 1.0593180188922524e-05,
+    "median_diff": 6.62073761925619e-07,
+    "cliffs_delta": 0.09788431158775368,
+    "n_g": 848,
+    "n_c": 848
+  },
+  "nulls": [
+    {
+      "median_gaba": 1.501440490425665e-05,
+      "median_ctrl": 1.4331931953937005e-05,
+      "median_diff": 6.824729503196458e-07,
+      "cliffs_delta": 0.07173093182627266,
+      "n_g": 848,
+      "n_c": 848,
+      "null_id": 0
+    },
+    {
+      "median_gaba": 1.5108062264235222e-05,
+      "median_ctrl": 1.3206348133176782e-05,
+      "median_diff": 1.9017141310584407e-06,
+      "cliffs_delta": 0.09909554111783558,
+      "n_g": 848,
+      "n_c": 848,
+      "null_id": 1
+    },
+    {
+      "median_gaba": 1.0439135991080484e-05,
+      "median_ctrl": 9.779822139122096e-06,
+      "median_diff": 6.593138519583874e-07,
+      "cliffs_delta": 0.08214667141331433,
+      "n_g": 848,
+      "n_c": 848,
+      "null_id": 2
+    },
+    {
+      "median_gaba": 1.4900234944659196e-05,
+      "median_ctrl": 1.3303781200568743e-05,
+      "median_diff": 1.5964537440904536e-06,
+      "cliffs_delta": 0.08493625400498406,
+      "n_g": 848,
+      "n_c": 848,
+      "null_id": 3
+    },
+    {
+      "median_gaba": 1.4014526056260745e-05,
+      "median_ctrl": 1.0729871511849787e-05,
+      "median_diff": 3.2846545444109587e-06,
+      "cliffs_delta": 0.0828002625489499,
+      "n_g": 848,
+      "n_c": 848,
+      "null_id": 4
+    }
+  ],
+  "null_delta_mean": 0.08414193218227131,
+  "null_delta_sd": 0.009798666237472574,
+  "null_median_diff_mean": 1.6249218443675773e-06,
+  "empirical_p_delta": 0.3333333333333333,
+  "empirical_p_median_diff": 0.8333333333333334,
+  "verdict_note": "pilot: directional Gate-4 evidence only; full protocol = 500 nulls at k=8-32 before publication"
+}

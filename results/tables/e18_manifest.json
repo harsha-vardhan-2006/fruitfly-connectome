@@ -1,0 +1,165 @@
+{
+  "generated": "2026-09-15",
+  "dataset": {
+    "name": "FlyWire FAFB v783 (Princeton exports)",
+    "license": "CC BY-NC 4.0",
+    "required_citations": [
+      "Dorkenwald et al. Nature 634:124-144 (2024)",
+      "Schlegel et al. Nature 634:153-170 (2024)",
+      "Matsliah et al. Nature (2024)"
+    ],
+    "raw_file_sha256": {
+      "neurons.csv.gz": "6a6b3759e635f0f35a677d169052362131ec61d95f55919298b55c43fce4e719",
+      "names.csv.gz": "e541ef9ef4b9e62d798f165ae76853d15b84174cf1dce95392f313a491055332",
+      "classification.csv.gz": "e946b552f4056dfc977707be0674609832c3f64332a22d69dc0d9615e7aae663",
+      "consolidated_cell_types.csv.gz": "8aba246d71dc40361677493629972ce3883048c3d02010adc42bda22962a1a2d",
+      "visual_neuron_types.csv.gz": "4bcc6a2f98b86e6c3fb7eaddb49736f3d81ab65bda35da8f740641201a1e379f",
+      "cell_stats.csv.gz": "bd5879e1b5df964bea2f3ca5316348d4276ce2ccaac283f0e36583c04fbd3d8e",
+      "coordinates.csv.gz": "14337121f451f98c2576cee72c24409ada5aaf7948b7c7ca8de9040296840e05",
+      "column_assignment.csv.gz": "bdf4ce7f62cc63493d53eefad3816ff2dfd08b190e97b35a492e0e453df2f0f6",
+      "connectivity_tags.csv.gz": "68c69cec13810fa543c600a5b9973d10718b449740e010834662be1dc1b8696c",
+      "connections_princeton.csv.gz": "445f996bf6c4b1803b9ba186189138a3061ff8623aa94c0abcf38af30a5bd48b",
+      "connections_princeton_no_threshold.csv.gz": "62c2e562a7470bfd32cbb98e36af3daa607ba0822b37223b34f2aa45250a920e",
+      "connections_buhmann_no_threshold.csv.gz": "e40e028b47f9bfc9b6b5a8da534be307eaded1f716b9a39e2c4a586c9f7fc67e",
+      "neuropil_synapse_table.csv.gz": "e525bdea7bc2fe585cf8ab8f9fc76bea5e29f2c3e5240588b6add518bcda5ab1",
+      "synapse_attachment_rates.csv.gz": "2e412c5714c21aa4f6ebff74801f620d161594740aaee25c73f5bc18b0110447",
+      "synapse_coordinates.csv.gz": "dfcb423d9f685d56c81160e50ca158c9ab589871cb01922af2a5b8c4442216b1",
+      "fafb_v783_princeton_synapse_table.csv.gz": "780a0ebd9320847b9fce2b05056b3d57a56da097549dae7847b8e55c488f1e29",
+      "labels.csv.gz": "bdd4eafab2bfe30540256c84ea1513e4b1877c0c4cf03f919204b4eafae5868e",
+      "processed_labels.csv.gz": "9feab030bd7f0f9f9909a56f4ed37f019fc19cc076180b494f3bff55bf1480d2",
+      "sk_lod1_783_healed.zip": "2e09264207895c4159bafc15129ec8e1537e391c86306bf141b87acfeeb43a56"
+    }
+  },
+  "environment": {
+    "python": "3.13.2",
+    "pandas": "2.3.3",
+    "numpy": "2.4.2",
+    "scipy": "1.18.0",
+    "os": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64"
+  },
+  "frozen_parameters": {
+    "cis": "CIS(i) = 1 - S(G-i)/S(G); freeze-N; unweighted directed",
+    "panel_k_screen": 8,
+    "panel_k_rerank": 32,
+    "panel_seeds": [
+      0,
+      1
+    ],
+    "matching": "1:1 greedy, total degree +/-10%, GABA->ACh, no replacement",
+    "targets_preregistered": 3518,
+    "null_pilot": {
+      "n_nulls": 5,
+      "k": 4,
+      "full_protocol_pending": ">=100 nulls at k>=8"
+    },
+    "random_seed": 0
+  },
+  "experiments": {
+    "E01": {
+      "desc": "pipeline build",
+      "status": "PASS",
+      "outputs": [
+        "data/processed/graph_pairs.parquet",
+        "data/processed/neuron_core.parquet",
+        "data/processed/build_report.json"
+      ]
+    },
+    "E02": {
+      "desc": "baseline statistics",
+      "status": "PASS",
+      "outputs": [
+        "results/tables/baseline_global.csv",
+        "results/tables/baseline_by_nt.csv",
+        "results/tables/baseline_edges_by_nt.csv",
+        "results/tables/baseline_node_metrics.parquet"
+      ]
+    },
+    "E04": {
+      "desc": "CIS definition+validation+benchmark",
+      "status": "GATE1 PASS 9/9",
+      "outputs": [
+        "results/tables/e04_benchmark.json",
+        "tests/test_control_impact.py"
+      ]
+    },
+    "E06": {
+      "desc": "whole-brain perturbation (screen k=8, rerank k=32)",
+      "status": "PASS",
+      "outputs": [
+        "results/tables/e06_preregistration.json",
+        "results/tables/e06_screen_k8.parquet",
+        "results/tables/e06_rerank_k32.parquet",
+        "results/tables/e06_screen_summary.json"
+      ]
+    },
+    "E07": {
+      "desc": "NT annotation join",
+      "status": "PASS",
+      "outputs": [
+        "results/tables/e07_annotated.parquet",
+        "results/tables/e07_annotation_quality.json"
+      ]
+    },
+    "E08": {
+      "desc": "degree matching (pre-registered)",
+      "status": "848 pairs",
+      "outputs": [
+        "results/tables/e08_matched_pairs.csv"
+      ]
+    },
+    "E09": {
+      "desc": "statistics",
+      "status": "PASS",
+      "outputs": [
+        "results/tables/e09_descriptives.csv",
+        "results/tables/e09_results.json"
+      ]
+    },
+    "E10": {
+      "desc": "degree-preserving nulls (PILOT 5 nulls k=4)",
+      "status": "PILOT COMPLETE - outcome B indicated",
+      "outputs": [
+        "results/tables/e10_results.json"
+      ]
+    },
+    "E11-E14": {
+      "desc": "neighborhoods, enrichment, robustness, catalogue",
+      "status": "PASS",
+      "outputs": [
+        "results/tables/e11_e14_results.json",
+        "results/tables/e14_chokepoint_catalogue.csv"
+      ]
+    },
+    "E15": {
+      "desc": "figures 2-7",
+      "status": "PASS",
+      "outputs": [
+        "results/figures/fig2_",
+        "results/figures/fig3_",
+        "results/figures/fig4_",
+        "results/figures/fig5_",
+        "results/figures/fig6_",
+        "results/figures/fig7_"
+      ]
+    },
+    "E17": {
+      "desc": "manuscript draft",
+      "status": "DRAFT",
+      "outputs": [
+        "paper/manuscript.md"
+      ]
+    }
+  },
+  "key_findings": {
+    "hypothesis": "OUTCOME B - degree explains the GABA control effect",
+    "top_chokepoint": {
+      "cis": 0.024,
+      "share_of_efficiency": "2.4%"
+    },
+    "anatomical_result": "top-50 chokepoints 11.7x enriched for visual centrifugal neurons",
+    "ols_beta1_gaba": -0.025,
+    "matched_pairs_cliffs_delta": 0.111,
+    "null_pilot_delta_mean": 0.084
+  }
+}

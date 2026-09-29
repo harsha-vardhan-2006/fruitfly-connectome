@@ -1,0 +1,18 @@
+{
+  "cis_column_used": "gaba_cis_k8",
+  "matched_pairs": 848,
+  "cliffs_delta_matched": 0.11131769535421854,
+  "wilcoxon_signed_rank_p": 0.0011292456860141715,
+  "median_diff_matched": 8.748729884433537e-07,
+  "permutation_p_median_diff": 9.999000099990002e-05,
+  "ols_log_cis": {
+    "beta0": -6.160001778511679,
+    "beta1_gaba": -0.025145786588316565,
+    "beta2_logdegree": 0.5234995745241856,
+    "beta1_perm_p_one_sided": 0.9472105578884223
+  },
+  "unmatched_median_gaba": 1.0061039366182634e-05,
+  "unmatched_median_ach": 9.259072460132689e-06,
+  "unmatched_cliffs_delta": 0.18398910077199382,
+  "background_median_cis_random500": null
+}

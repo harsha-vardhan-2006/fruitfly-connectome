@@ -1,0 +1,20 @@
+{
+  "total_tested": 3518,
+  "by_nt": {
+    "GABA": 1707,
+    "ACH": 1124,
+    "GLUT": 373,
+    "null": 227,
+    "DA": 39,
+    "SER": 29,
+    "OCT": 19
+  },
+  "by_nt_sign": {
+    "inhibitory": 1707,
+    "excitatory": 1124,
+    "glut": 373,
+    "unknown": 227,
+    "modulatory": 87
+  },
+  "pct_annotated_nt": 93.5474701534963
+}

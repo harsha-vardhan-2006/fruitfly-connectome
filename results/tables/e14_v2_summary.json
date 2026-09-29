@@ -1,0 +1,21 @@
+{
+  "n_top50": 50,
+  "class_counts": {
+    "B_degree_driven_hub|D_visual_system": 23,
+    "A_strong_chokepoint|D_visual_system": 9,
+    "B_degree_driven_hub": 4,
+    "B_intermediate|D_visual_system": 4,
+    "A_strong_chokepoint": 3,
+    "B_degree_driven_hub|D_visual_system+C_gaba_exploratory": 3,
+    "B_intermediate|C_gaba_exploratory": 2,
+    "B_intermediate": 1,
+    "A_strong_chokepoint|D_visual_system+C_gaba_exploratory": 1
+  },
+  "median_emp_p": 0.112,
+  "n_emp_p_below_0.01": 13,
+  "n_emp_p_below_0.05": 20,
+  "n_tiny_pools_lt10": 9,
+  "visual_system_fraction_top50": 0.8,
+  "median_cis_excess_ratio": 3.078615241971817,
+  "note": "emp_p calibrated on full tested population, self excluded from pools; tiny peer pools (<10) flagged via peer_pool_n; Gate-4 closed by E10B 100-null ensemble (p_delta = 0.109, p_median_diff = 0.782; results/final/e10b_final.json)"
+}

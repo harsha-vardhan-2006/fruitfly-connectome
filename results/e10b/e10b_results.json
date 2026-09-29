@@ -1,0 +1,21 @@
+{
+  "n_nulls_completed": 100,
+  "observed": {
+    "median_gaba": 1.1255253950848143e-05,
+    "median_ctrl": 1.0593180188922524e-05,
+    "median_diff": 6.62073761925619e-07,
+    "cliffs_delta": 0.09788431158775368,
+    "n_g": 848,
+    "n_c": 848
+  },
+  "null_delta_mean": 0.07132400876646489,
+  "null_delta_sd": 0.02203395436225213,
+  "null_delta_max": 0.1211146092915629,
+  "null_delta_p95": 0.10666996707013172,
+  "obs_delta_z_vs_null": 1.2054260612789078,
+  "empirical_p_delta": 0.10891089108910891,
+  "empirical_p_median_diff": 0.7821782178217822,
+  "null_median_diff_mean": 1.5336412428934577e-06,
+  "all_nulls_degree_verified": true,
+  "gate4_note": "observed effect vs degree-preserving nulls; p_delta >= 0.05 => degree topology reproduces the GABA effect"
+}

@@ -1,0 +1,19 @@
+\begin{table}[htbp]
+\centering
+\small
+\caption{\textbf{Primary GABA hypothesis statistics.} The raw matched-pair effect is small and does not survive degree control (OLS $\beta_1\approx 0$); see Table~\ref{tab:nulls} for the decisive null-ensemble comparison. Source: \texttt{e09\_results.json}.}\label{tab:gaba}
+\begin{tabular}{lr}
+\hline
+\textbf{Statistic} & \textbf{Value} \\
+\hline
+Matched pairs (GABA vs ACh, total degree $\pm10\%$) & 848 \\
+Median difference in CIS (k=8 screening) & 8.75e-07 \\
+Cliff's $\delta$ (matched) & 0.111 \\
+Wilcoxon signed-rank $p$ & 0.0011 \\
+Permutation $p$ (median difference) & 1.0e-04 \\
+OLS $\beta_1$ (GABA), $\log_{10}$CIS $\sim$ GABA + $\log_{10}$degree & -0.025 \\
+Permutation $p$ on $\beta_1$ (one-sided) & 0.95 \\
+Unmatched medians (GABA / ACh) & 1.01e-05 / 9.26e-06 \\
+\hline
+\end{tabular}
+\end{table}

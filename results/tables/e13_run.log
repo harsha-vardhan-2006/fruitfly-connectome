@@ -1,0 +1,60 @@
+[E13] running k=32 seeds 2,3 (~6.5 min each) ...
+[E13.1] seed 2 done: 200 targets
+[E13.1] seed 3 done: 200 targets
+[E13] running k=16 seed 0 ...
+[E13.2] k=16 done: 200 targets
+[E13] stability report ...
+[E13] degree-definition sensitivity ...
+[E13] GABA+GLUT sensitivity ...
+{
+  "seeds_k32": {
+    "added": [
+      2,
+      3
+    ],
+    "total_seeds": 4
+  },
+  "stability": {
+    "spearman_vs_main_k32": {
+      "cis_s0": 0.964844732935166,
+      "cis_s1": 0.9534099078344453,
+      "cis_s2": 0.9054154749177398,
+      "cis_s3": 0.882132964924095
+    },
+    "k_ladder_spearman": {
+      "cis_k8_vs_cis_k16": 0.6618105070282829,
+      "cis_k8_vs_cis_k32main": 0.6657343874299341,
+      "cis_k16_vs_cis_k32main": 0.857346219675786
+    },
+    "top100_jaccard_4seeds": 0.6341463414634146,
+    "top100_jaccard_k_ladder": 0.5190839694656488,
+    "top50_jaccard_4seeds": 0.4025974025974026,
+    "top50_jaccard_k_ladder": 0.325
+  },
+  "degree_definition": {
+    "spearman_cis_vs_total_degree": 0.5844401118048438,
+    "spearman_cis_vs_in_degree": 0.48891083394403034,
+    "spearman_cis_vs_out_degree": 0.5371352658287463,
+    "top50_median_in_degree": 566.0,
+    "top50_median_out_degree": 1050.0,
+    "top50_median_total_degree": 1925.5,
+    "tested_median_total_degree": 315.0
+  },
+  "gaba_glut_sensitivity": {
+    "n_pairs_inh_cand_vs_ach": 967,
+    "median_inh_cand_minus_ach": 6.561547414296598e-07,
+    "wilcoxon_p": 1.1470972939852789e-05,
+    "cliffs_delta": 0.10727214201001178,
+    "sign_flip_permutation_p": 0.0044995500449955,
+    "note": "sensitivity definition only - GLUT is ambiguous E/I; primary comparison remains GABA vs ACh"
+  },
+  "connection_table": {
+    "status": "documented_not_run",
+    "reason": "no-threshold collapse ~50M node-pairs exceeds 8 GB RAM on this machine; moved to dedicated high-RAM notebook; Buhmann excluded as methodologically non-comparable"
+  },
+  "metric": {
+    "status": "ok",
+    "spearman_cis_vs_reach_drop": 0.39201046877570206
+  },
+  "runtime_s": 2924.8
+}

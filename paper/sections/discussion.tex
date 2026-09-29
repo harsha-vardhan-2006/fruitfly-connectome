@@ -1,0 +1,78 @@
+% 5. Discussion
+\section{Discussion}
+
+\paragraph{Main finding 1: the GABA-specific hypothesis is not supported.}
+The pre-registered test --- degree matching, degree-controlled regression,
+and an ensemble of 100 degree-preserving null networks --- did not provide
+evidence that GABAergic identity independently predicts structural control
+impact beyond degree-related structural effects. The small matched-pair
+advantage ($\delta\approx0.10$--$0.11$ depending on panel size) lies
+inside the null ensemble, and the regression residual is indistinguishable
+from zero. This is a meaningful negative result: given the documented
+GABA--degree association \cite{lin2024}, the analysis asked precisely
+whether anything remains beyond degree, and at this resolution and
+estimator, nothing does. The claim is bounded: it does not establish that
+degree \emph{causes} control impact, nor that neurotransmitters play no
+role in circuit function beyond what a structural, shortest-path analysis
+can detect.
+
+\paragraph{Main finding 2: structural chokepoints concentrate in
+visual-centrifugal architecture.}
+The strongest neurons are not scattered randomly across the degree
+distribution: they concentrate in visual-centrifugal circuitry
+(2.63$\times$ after degree matching, $z=5.3$), consistently across
+threshold choices ($K=25/50/100$). This is the study's positive
+contribution --- a concrete, ranked, anatomy-linked structural chokepoint
+map of the adult fly brain, quantified against degree-matched nulls rather
+than raw base rates. It is consistent with anatomical knowledge that
+centrifugal feedback neurons bridge the massive optic-lobe periphery to
+the central brain \cite{matsliah2024,hoeller2026,mickels2026}: such bridge
+positions make single-neuron removal disproportionately damaging to
+eye--brain communication paths.
+
+\paragraph{Main finding 3: some individuals exceed degree-matched peers
+substantially.}
+Thirteen of the top 50 beat their degree-matched peers individually, and
+one moderate-degree centrifugal neuron reaches ${\sim}156\times$ its peer
+median. Degree alone therefore does not completely explain the observed
+architecture. As clearly labeled hypotheses for future work, plausible
+contributors include inter-batch (inter-neuropil) bridging topology,
+bilateral mirror-position redundancy, and cell-type-specific wiring
+patterns; none of these was tested here, and we do not assert any as
+established mechanisms.
+
+\paragraph{Biological meaning.}
+All findings concern structural network features: sensitivity of a
+shortest-path efficiency functional to computational node removal. They
+identify \emph{network-control-sensitive neurons}, not functional
+necessity; removal impact is an abstraction of silencing, not a
+physiological manipulation. The results generate specific, testable
+predictions --- e.g., that perturbing the identified centrifugal
+chokepoints should disproportionately affect eye--brain signal
+propagation --- but establishing that requires functional experiments.
+
+\paragraph{Limitations.}
+(1) Structural, not functional: no firing rates, dynamics, or state
+dependence. (2) Dependence on a single reconstruction (FAFB v783, one
+female brain); cross-dataset replication (BANC, MaleCNS) remains future
+work. (3) The node-removal metric is one abstraction; a reachability-drop
+metric correlates only moderately ($\rho=0.39$) and both are reported.
+(4) Neurotransmitter annotations are predictions, not measured signs;
+GLUT was deliberately analyzed separately. (5) Degree matching is greedy
+1:1 within $\pm10\%$; residual degree imbalance within windows cannot be
+fully excluded, though the null ensemble --- which preserves degree
+exactly --- addresses the dominant confound. (6) The full no-threshold
+connection-table sensitivity analysis was RAM-infeasible here
+(${\sim}50$M pairs; deferred to high-RAM), and the Buhmann table is
+non-comparable; this axis remains open. (7) Empirical $p$-values on 100
+nulls have ${\sim}0.01$ tail resolution, and the null comparison uses the
+$k{=}4$ panel (observed $\delta=0.098$) while the primary matched-pair
+statistic reads $\delta=0.111$ at $k{=}8$; both statistics agree on the
+verdict, and the OLS independently points the same way.
+
+\paragraph{Future work.}
+Functional recordings targeting the identified chokepoints; activity-aware
+and temporal-dynamics models; synaptic-weight-aware efficiency metrics;
+higher-resolution (no-threshold) sensitivity analyses on high-RAM
+hardware; cross-dataset replication; and experimental validation of the
+centrifugal chokepoint predictions.

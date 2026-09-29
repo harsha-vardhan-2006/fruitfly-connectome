@@ -1,0 +1,44 @@
+# Primary analysis configuration (FROZEN - do not modify without a new
+# pre-registration entry in RESEARCH_LOG.md)
+dataset:
+  name: FAFB v783 Princeton
+  edge_source: connections_princeton.csv.gz
+  threshold: 5   # synapses per connection (applied upstream by FlyWire)
+
+graph:
+  representation: binary directed CSR
+  collapse: sum syn_count across neuropils; per-pair NT = synapse-weighted majority
+
+cis:
+  definition: CIS(i) = 1 - S(G-i)/S(G)
+  convention: freeze-N
+  distance: unweighted directed shortest path
+  estimator: fixed-source-panel BFS
+  panel_k_screen: 8
+  panel_k_rerank: 32
+  panel_seeds: [0, 1]
+
+targets:
+  top_percent: 1.0
+  centrality_union: [total_degree, in_out_strength, pagerank]
+  gaba_hot: degree >= p90 of GABA degrees
+  background_random: 500
+  seed: 0
+
+matching:
+  case_class: GABA
+  control_class: ACH
+  variable: total_degree
+  window: 0.10
+  strategy: 1:1 greedy without replacement, larger-degree cases first
+
+statistics:
+  paired_test: wilcoxon_signed_rank
+  effect_size: cliffs_delta
+  permutation: {n_perm: 10000, statistic: median_diff}
+  regression: log10(CIS+1e-7) ~ GABA + log10(total_degree+1)
+
+nulls:
+  model: directed configuration model (exact degree sequences)
+  pilot: {n_nulls: 5, panel_k: 4}
+  full_protocol: {n_nulls: 100, panel_k: 8, status: pre-registered, not_run}

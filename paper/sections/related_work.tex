@@ -1,0 +1,44 @@
+% 2. Related Work
+\section{Related Work}
+
+\paragraph{Connectome resources.} The FAFB volume and its FlyWire
+segmentation constitute the first complete adult \emph{Drosophila} brain
+connectome \cite{dorkenwald2024}, with whole-brain cell typing and
+neurotransmitter predictions \cite{schlegel2024} and a dense visual-system
+inventory \cite{matsliah2024}. Related resources now span the ventral
+nerve cord and whole-CNS datasets, enabling cross-dataset comparisons
+beyond this study's scope.
+
+\paragraph{Network analyses of the fly brain.} Lin et al.\ analyzed rich-
+club organization, signed motifs, and degree-ordered neuron-removal
+survival curves on the adult connectome, and showed that high-degree
+neurons are mostly GABAergic \cite{lin2024}. Earlier connectome-wide flow
+analysis \cite{shih2015} and hierarchical modular decomposition
+\cite{kunin2023} characterized organization at coarser grain. None of
+these produced a per-neuron control-impact ranking conditioned on
+neurotransmitter identity with degree-matched controls.
+
+\paragraph{Perturbation-style analyses.} Set-wise manipulation of neural
+activity in a whole-brain simulation \cite{shiu2024} probes function
+rather than structure; hub-neuron removal in \emph{C.\ elegans}
+\cite{uzel2022} established the removal approach at small scale without
+neurotransmitter-resolved controls; signed motif censuses
+\cite{szilagyi2026} characterize local circuit logic rather than global
+removal impact.
+
+\paragraph{Visual-system architecture.} Visual centrifugal neurons relay
+central-brain signals back to the optic lobes and have been catalogued
+anatomically \cite{matsliah2024,hoeller2026}; a recent review develops the
+functional case for centrifugal feedback \cite{mickels2026}. Concurrent
+work analyzed distributed control circuits across a brain-and-cord
+connectome (BANC) at whole-CNS scale \cite{bates2026} --- a different
+dataset and scope. Our contribution conditions the architecture on
+quantitative, degree-matched removal impact in the adult brain, which
+prior anatomical catalogues do not provide.
+
+\paragraph{Gap.} To our knowledge, previous studies have not reported this
+specific combination of neuron-level removal-based global-efficiency
+impact, degree-controlled neurotransmitter comparison, degree-preserving
+null testing, and visual-centrifugal enrichment analysis in FAFB v783.
+The full 22-paper verification matrix with per-entry verification status
+is available in \texttt{literature/literature\_review.csv}.

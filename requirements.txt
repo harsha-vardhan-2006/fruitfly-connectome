@@ -1,0 +1,21 @@
+# flybrain-research — Python dependencies
+# Python 3.13 (run via `py` launcher on this machine)
+#
+# Core (all verified installed and used by the pipeline):
+pandas==2.3.3
+numpy==2.4.2
+scipy==1.18.0
+pyarrow==23.0.1
+tqdm==4.67.3
+
+# Optional (figures only; not needed for E01/E02; install when starting
+# the figures milestone):
+# matplotlib>=3.9
+# seaborn>=0.13
+
+# Optional (only if scipy sampling proves too slow for E03 betweenness;
+# igraph is C-backed and handles 139k-node betweenness well):
+# igraph>=0.11
+
+# Deliberately NOT used: networkx (too slow/memory-heavy at 139k nodes,
+# per research_plan.md section 27). scipy.sparse is the graph engine.

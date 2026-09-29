@@ -1,0 +1,179 @@
+{
+  "n_tested": 3518,
+  "vc_tested_count": 125,
+  "vc_tested_rate": 0.03553155201819216,
+  "K25": {
+    "observed_vc": 9,
+    "expected_A_tested_universe": 0.8778,
+    "expected_B_degree_matched": 3.6398,
+    "p_A": 9.999000099990002e-05,
+    "p_B": 0.0020997900209979003,
+    "z_A": 8.810010774825487,
+    "z_B": 3.2587804132680342,
+    "enrichment_vs_tested": 10.252904989747094,
+    "enrichment_vs_degree_matched": 2.472663333150173
+  },
+  "K50": {
+    "observed_vc": 21,
+    "expected_A_tested_universe": 1.7987,
+    "expected_B_degree_matched": 7.9849,
+    "p_A": 9.999000099990002e-05,
+    "p_B": 9.999000099990002e-05,
+    "z_A": 14.537461523835827,
+    "z_B": 5.29951027266644,
+    "enrichment_vs_tested": 11.675098682381721,
+    "enrichment_vs_degree_matched": 2.6299640571578857
+  },
+  "K100": {
+    "observed_vc": 30,
+    "expected_A_tested_universe": 3.5843,
+    "expected_B_degree_matched": 13.9547,
+    "p_A": 9.999000099990002e-05,
+    "p_B": 9.999000099990002e-05,
+    "z_A": 14.197394399074701,
+    "z_B": 4.93360551587476,
+    "enrichment_vs_tested": 8.36983511424825,
+    "enrichment_vs_degree_matched": 2.1498133245429853
+  },
+  "per_class_top50": [
+    {
+      "super_class": "visual_centrifugal",
+      "observed_top50": 21,
+      "expected_tested": 1.77,
+      "enrichment": 11.84,
+      "tested_count": 125
+    },
+    {
+      "super_class": "visual_projection",
+      "observed_top50": 3,
+      "expected_tested": 2.62,
+      "enrichment": 1.14,
+      "tested_count": 185
+    },
+    {
+      "super_class": "optic",
+      "observed_top50": 19,
+      "expected_tested": 17.01,
+      "enrichment": 1.12,
+      "tested_count": 1198
+    },
+    {
+      "super_class": "central",
+      "observed_top50": 6,
+      "expected_tested": 22.3,
+      "enrichment": 0.27,
+      "tested_count": 1566
+    },
+    {
+      "super_class": "descending",
+      "observed_top50": 1,
+      "expected_tested": 4.46,
+      "enrichment": 0.22,
+      "tested_count": 315
+    },
+    {
+      "super_class": "sensory",
+      "observed_top50": 0,
+      "expected_tested": 0.83,
+      "enrichment": 0.0,
+      "tested_count": 58
+    },
+    {
+      "super_class": "motor",
+      "observed_top50": 0,
+      "expected_tested": 0.61,
+      "enrichment": 0.0,
+      "tested_count": 43
+    },
+    {
+      "super_class": "ascending",
+      "observed_top50": 0,
+      "expected_tested": 0.35,
+      "enrichment": 0.0,
+      "tested_count": 25
+    },
+    {
+      "super_class": "sensory_ascending",
+      "observed_top50": 0,
+      "expected_tested": 0.03,
+      "enrichment": 0.0,
+      "tested_count": 2
+    },
+    {
+      "super_class": "endocrine",
+      "observed_top50": 0,
+      "expected_tested": 0.01,
+      "enrichment": 0.0,
+      "tested_count": 1
+    }
+  ],
+  "top50_visual_type": {
+    "OA-AL2b2": 4,
+    "cL21": 3,
+    "Pm14": 3,
+    "MeMe_e13": 2,
+    "Li33": 2,
+    "cM05": 2,
+    "cM15": 2,
+    "Sm42": 2,
+    "cML01": 2,
+    "CT1": 2,
+    "OA-AL2i1": 2,
+    "LT42": 2,
+    "MeMe_e07": 1,
+    "Am1": 1,
+    "LPi13": 1
+  },
+  "top50_names": [
+    "LO.5422",
+    "LO.1",
+    "ME.131",
+    "IPS.ME.3",
+    "LOP.4",
+    "ME.LO.2",
+    "ME.LO.1",
+    "GNG.1",
+    "LOP.1",
+    "LO.3",
+    "GNG.5",
+    "MB_ML.MB_CA.1",
+    "IPS.ME.5",
+    "IPS.ME.1",
+    "LO.4",
+    "GNG.ME.1",
+    "ME.55",
+    "LOP.IPS.2",
+    "IPS.ME.2",
+    "IPS.ME.4",
+    "IPS.ME.6",
+    "ME.8",
+    "SCL.WED.1",
+    "ME.LOP.5",
+    "GNG.ME.2",
+    "ME.2",
+    "ME.35",
+    "MB_ML.1",
+    "ME.39073",
+    "PVLP.LO.2",
+    "AVLP.ME.2",
+    "LO.21",
+    "ME.5",
+    "PVLP.LO.1",
+    "AVLP.ME.1",
+    "ME.39072",
+    "ME.3",
+    "PVLP.LO.4",
+    "ME.11",
+    "SPS.ME.1",
+    "SMP.MB_ML.1",
+    "LO.20",
+    "ME.17",
+    "LO.8",
+    "AL.1",
+    "PLP.LO.1",
+    "LO.5423",
+    "GNG.LO.1",
+    "LO.32",
+    "ME.398"
+  ]
+}
